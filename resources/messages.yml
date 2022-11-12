@@ -4,35 +4,37 @@
 
 # Use & instead of double S for a quicker colorizing of texts
 
-prefix: "&l&4[SkyBlocksPM]"
+prefix: "&l&7[&aＳｋｙＢｌｏｃｋ&7] &f"
 
 # seperator seperates the message from the prefix
 # Format looks like:
 # {prefix} {seperator} {message}
-# the spaces are automatically added so you dont have to worry about that too :))
+# the spaces are automatically added, so you don't have to worry about that too :))
 seperator: "&e=>&b"
 
 messages:
-  skyblock-creating: "SkyBlock is currently creating..."
-  player-not-online: "The player you have specified is currently not online or doesnt exist."
-  have-sb: "You already own a SkyBlock Island"
-  no-sb: "You do not have a SkyBlock Island to use the command."
-  not-registered: "The player you have specified does not exist."
-  no-island: "The specified player does not own an island."
+  skyblock-creating: "SkyBlock đang được tạo..."
+  player-not-online: "Người chơi không online!"
+  have-sb: "Bạn đã có SkyBlock!"
+  no-sb: "Bạn không có SkyBlock!, hãy tạo SkyBlock bằng cách sử dụng /sb create"
+  not-registered: "Người chơi bạn đã chỉ định không tồn tại."
+  no-island: "Người chơi bạn đã chỉ định không có đảo."
   no-default-island: "The default island has not been set, please ask the server staff to use the '/sb setworld' command to set the island world"
-  no-sb-go: 'You do not own a SkyBlock island'
-  no-perms-delete: "You do not have the permission to delete other SkyBlock islands."
-  deleted-sb: "You have successfully deleted {NAME}'s SkyBlock Island."
-  invite-get: "You have received an invitation from {INVITER}, to accept run '/sb accept {INVITER}'"
-  invite-expired: "The invite that was pending has expired."
-  invite-pending: "You already have a pending invite."
-  invite-sent: "You have successfully sent an invite to {PLAYER}."
-  invite-accepted: "{PLAYER} has joined your SkyBlock."
-  member-limit: "You have reached the member limit for your SkyBlock"
-  create: "You have successfully created your SkyBlock."
-  visit: "You are currently visiting {NAME}'s Island.."
-  delete: "Deleting your SkyBlock Island.."
-  default-world: "You can not set the default world of the server as a skyblock world"
-  toggle-chat: "Toggled Island chat"
-
-  skyblock-chat: "&f[SkyBlocksPM] &e[{PLAYER}] &6=> {MSG}"
+  no-sb-go: 'Bạn không sở hữu một hòn đảo'
+  no-perms-delete: "Bạn không có quyền xóa các đảo khác"
+  deleted-sb: "Bạn đã xóa thành công Đảo {NAME}."
+  invite-get: "Bạn đã nhận được lời mời từ {INVITER}, hãy chấp nhận '/sb2 accept {INVITER}'"
+  invite-expired: "Lời mời đã hết hiệu lực"
+  invite-pending: "Bạn đã có một lời mời đang chờ xử lý."
+  invite-sent: "Bạn đã gửi thành công lời mời đến {PLAYER}."
+  invite-accepted: "{PLAYER} đã chấp nhận lời mời của bạn."
+  member-limit: "Bạn đã đạt đến giới hạn thành viên cho SkyBlock của mình."
+  create: "Bạn đã tạo thành công đảo của mình."
+  visit: "Bạn hiện đang ghé thăm Đảo của {NAME} .."
+  delete: "Đang xóa Đảo SkyBlock của bạn .."
+  default-world: "Bạn không thể đặt thế giới mặc định của máy chủ làm thế giới skyblock"
+  toggle-chat: "Trò chuyện trên Đảo đã chuyển đổi"
+  remove-member: "Bạn đã xóa {PLAYER} khỏi Đảo của bạn."
+  skyblock-chat: "&f[SKYBLOCK-WORLD] &e[{PLAYER}] &6 ↦&f {MSG}"
+  members: "Thành viên: {MEMBERS}"
+  member-not-found: "Không tìm thấy thành viên {PLAYER}"

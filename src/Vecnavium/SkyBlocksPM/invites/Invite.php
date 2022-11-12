@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Vecnavium\SkyBlocksPM\invites;
 
+use phuongaz\core\player\PlayerCore;
 use Vecnavium\SkyBlocksPM\SkyBlocksPM;
 use pocketmine\player\Player;
 
@@ -33,19 +34,20 @@ class Invite
         $players = [$this->inviter, $this->receiver];
         foreach ($players as $player)
         {
-            if ($player instanceof Player)
+            if (!$this->inviter instanceof PlayerCore)
                 $player->sendMessage(SkyBlocksPM::getInstance()->getMessages()->getMessage('invite-expired'));
         }
     }
 
     public function handleInvite(): bool
     {
-        if (!$this->inviter instanceof Player) return false;
-
         $inviter = SkyBlocksPM::getInstance()->getPlayerManager()->getPlayerByPrefix($this->inviter->getName());
         $receiver = SkyBlocksPM::getInstance()->getPlayerManager()->getPlayerByPrefix($this->receiver->getName());
 
-        if ($inviter->getSkyBlock() == '' || $receiver->getSkyBlock() !== '') return false;
+        if ($inviter->getSkyBlock() == '' || $receiver->getSkyBlock() == '') {
+            var_dump($inviter);
+            var_dump($receiver);
+        }
         return true;
     }
 

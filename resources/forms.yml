@@ -2,5 +2,5 @@
 #Forms Config File for SkyBlocksPM
 #==========================================#
 visit:
-  title: "&l&4[SkyBlocksPM] Visit Menu"
-  buttons: "&l&4{NAME} SkyBlocksPM"
+  title: "&l&4Danh sách người chơi đang trực tuyến"
+  buttons: "&l&f● &0{NAME} &f●"

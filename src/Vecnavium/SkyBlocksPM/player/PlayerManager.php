@@ -55,6 +55,12 @@ class PlayerManager
 
     public function getPlayer(P $player): Player
     {
+        if(!$player->isClosed()) {
+            if (!isset($this->players[$player->getName()])) {
+                $this->loadPlayer($player);
+                SkyBlocksPM::getInstance()->getDataBase()->waitAll();
+            }
+        }
         return $this->players[$player->getName()];
     }
 

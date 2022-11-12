@@ -35,3 +35,9 @@ permissions:
   skyblockspm.chat:
     default: true
     description: SkyBlocks Island Chat
+  skyblockspm.remove:
+    default: true
+    description: Remove a player from your SkyBlock island
+  skyblockspm.members:
+    default: true
+    description: List all members of your SkyBlock island

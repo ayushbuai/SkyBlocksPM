@@ -50,7 +50,7 @@ class SkyBlocksPM extends PluginBase
         $this->playerManager = new PlayerManager();
         $this->SkyBlockManager = new SkyBlockManager();
         $this->inviteManager = new InviteManager();
-        $this->getServer()->getCommandMap()->register('SkyBlocksPM', new SkyBlockCommand($this, 'skyblock', 'The core command for SkyBlocks', ['sb', 'is']));
+        $this->getServer()->getCommandMap()->register('SkyBlocksPM', new SkyBlockCommand($this, 'skyblock', 'The core command for SkyBlocks', ['sb2', 'is2']));
         @mkdir($this->getDataFolder() . "cache");
         @mkdir($this->getDataFolder() . "cache/island");
         $this->checkUpdate();

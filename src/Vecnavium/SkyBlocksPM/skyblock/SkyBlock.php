@@ -68,7 +68,7 @@ class SkyBlock
     }
 
     /**
-     * @return array
+     * @return string[]
      */
     public function getMembers(): array
     {

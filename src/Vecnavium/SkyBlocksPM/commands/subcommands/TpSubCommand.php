@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Vecnavium\SkyBlocksPM\commands\subcommands;
 
+use pocketmine\Server;
 use Vecnavium\SkyBlocksPM\libs\CortexPE\Commando\BaseSubCommand;
 use Vecnavium\SkyBlocksPM\SkyBlocksPM;
 use pocketmine\command\CommandSender;
@@ -25,7 +26,7 @@ class TpSubCommand extends BaseSubCommand
         $skyblock = SkyBlocksPM::getInstance()->getPlayerManager()->getPlayer($sender)->getSkyblock();
         if ($skyblock == '')
         {
-            $sender->sendMessage(SkyBlocksPM::getInstance()->getMessages()->getMessage('no-sb-go'));
+            Server::getInstance()->getCommandMap()->dispatch($sender, 'sb create');
             return;
         }
         $spawn = SkyBlocksPM::getInstance()->getSkyBlockManager()->getSkyBlockByUuid($skyblock)->getSpawn();

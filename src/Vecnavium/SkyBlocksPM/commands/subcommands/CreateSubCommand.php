@@ -20,7 +20,7 @@ class CreateSubCommand extends BaseSubCommand
     protected function prepare(): void
     {
         $this->setPermission('skyblockspm.create');
-        $this->registerArgument(0, new RawStringArgument('name'));
+        //$this->registerArgument(0, new RawStringArgument('name'));
     }
 
     public function onRun(CommandSender $sender, string $aliasUsed, array $args): void
@@ -41,7 +41,7 @@ class CreateSubCommand extends BaseSubCommand
         $sender->sendMessage(SkyBlocksPM::getInstance()->getMessages()->getMessage('skyblock-creating'));
         $id = Uuid::uuid4()->toString();
         $player->setSkyBlock($id);
-        SkyBlocksPM::getInstance()->getGenerator()->generateIsland($sender, $id, $args['name']);
+        SkyBlocksPM::getInstance()->getGenerator()->generateIsland($sender, $id, $sender->getName());
     }
 
 }
