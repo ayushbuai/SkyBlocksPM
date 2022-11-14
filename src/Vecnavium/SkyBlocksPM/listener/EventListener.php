@@ -15,7 +15,6 @@ use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerQuitEvent;
-use pocketmine\item\Food;
 use pocketmine\player\Player as P;
 use pocketmine\utils\TextFormat;
 
@@ -54,23 +53,6 @@ class EventListener implements Listener
         $skyblock = SkyBlocksPM::getInstance()->getSkyBlockManager()->getSkyBlockByWorld($block->getPosition()->getWorld());
         if (!in_array($event->getPlayer()->getName(), $skyblock->getMembers())) {
             $event->cancel();
-            return;
-        }
-        if (SkyBlocksPM::getInstance()->getConfig()->getNested('settings.autoinv.enabled', true)) {
-            $drops = [];
-            foreach ($event->getDrops() as $drop) {
-                if (!$event->getPlayer()->getInventory()->canAddItem($drop))
-                    $drops[] = $drop;
-                else
-                    $event->getPlayer()->getInventory()->addItem($drop);
-            }
-            $event->setDrops([]);
-            if (SkyBlocksPM::getInstance()->getConfig()->getNested('settings.autoinv.drop-when-full'))
-                $event->setDrops($drops);
-        }
-        if (SkyBlocksPM::getInstance()->getConfig()->getNested('settings.autoxp', true)) {
-            $event->getPlayer()->getXpManager()->addXp($event->getXpDropAmount());
-            $event->setXpDropAmount(0);
         }
     }
 
@@ -96,8 +78,6 @@ class EventListener implements Listener
     public function onInteract(PlayerInteractEvent $event): void
     {
         if (!SkyBlocksPM::getInstance()->getSkyBlockManager()->isSkyBlockWorld($event->getPlayer()->getWorld()->getFolderName()))
-            return;
-        if ($event->getItem() instanceof Food)
             return;
         $skyblock = SkyBlocksPM::getInstance()->getSkyBlockManager()->getSkyBlockByWorld($event->getPlayer()->getWorld());
         if (!in_array($event->getPlayer()->getName(), $skyblock->getMembers()))
